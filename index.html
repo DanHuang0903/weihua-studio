@@ -173,7 +173,7 @@
 	}
 	.main-bg::before{
 		content: '';
-		background-image: url("img/main_bg2.png");
+		background-image: url("img/main_bg3.png");
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -211,16 +211,16 @@
 
 	.nature {
 		position: relative;
-		transform: translateY(55%);
+		transform: translateY(45%);
 		width: 100%;
 		overflow: hidden;
 		border-radius: 12px;
 		box-shadow: 0px 10px 6px #888;
 	}
 	.bg-img {
-		background-image: url("img/home_bg.png");
+		background-image: url("img/nature_img.png");
 		position: absolute;
-		width: 110%;
+		width: 100%;
 		height: 100%;
 		background-size: cover;
 		background-position: top center;
@@ -260,7 +260,7 @@
 	    border-radius: 12px;
 	    overflow: visible;
 	    height: 36em;
-	    width: 92%;
+	    width: 90%;
 	    float: right;
 	    padding: 0;
 	    display: grid;
@@ -306,8 +306,8 @@
 	}
 
 	#logo-story p {
-		font-family: 'Raleway', serif;
-		font-size: 19px;
+		font-family: 'Ubuntu', serif;
+		font-size: 17px;
 		word-spacing: 5px;
 	}
 
@@ -329,8 +329,8 @@
 	}
 
 	#belief p {
-		font-family: 'Raleway', serif;
-		font-size: 19px;
+		font-family: 'Ubuntu', serif;
+		font-size: 17px;
 		word-spacing: 5px;
 	}
 
@@ -452,14 +452,17 @@
 	   #nature-tile-words {
 	    -webkit-backdrop-filter: blur(5px);
 	    backdrop-filter: blur(5px);
-	    background-color: rgba(255, 255, 255, 0.5);  
+	    background-color: rgba(255, 255, 255, 0.4);  
 	  }
 	}
 	
+	#mobile-img {
+		display: none;
+	}
 
 	.footer-content{
 		height: 10rem;
-		margin-top: 35%;
+		margin-top: 30%;
 		padding-left: 10rem;
 		padding-right: 10rem ;
 		display: flex;
@@ -631,16 +634,8 @@
 		padding: 0.5rem;
 		font-size: 18px;
 	}
-	.nature {
-		transform: translateY(-25%);
-		background-image: none;
-		box-shadow: 0px 10px 6px #888;
-		border-radius: 12px;
-	}
-
-	.bg-img {
-		opacity: 0.6;
-	}
+	
+	
 	.home-main-content {
 		height: 0;
 	}
@@ -654,6 +649,27 @@
 	.home-main-content p {
 		display: none;
 	}
+
+	.nature {
+		transform: translateY(-20%);
+		background-image: none;
+		width: 100%;
+	}
+
+
+	.bg-img {
+		display: none;
+	}
+
+	#nature-tile-img {
+		display: none;
+	}
+	#nature-tile-img img {
+		display: none;
+	}
+	#nature-tile-btn {
+		display: none;
+	}
 	.nature-content h2 {
 		font-size: 40px;
 		
@@ -663,48 +679,131 @@
 		margin-left: 3rem;
 	}
 	.nature-tile {
-	    height: 18rem;
-	    width: 90%;
-	    padding: 0;
-	    margin: 1rem;
+	    height: 30rem;
+	    width: 100%;
+	    width: 100%;
+	    box-shadow: none;
+	    border: none;
 	    float: none;
-	    grid-template-columns: [first]40% [second]60%[end];
+	    grid-template-columns: [mnc1]100%[mnc2]auto[mnc3];
+	    grid-template-rows: [mnr1]100%[mnr2]auto[mnr2];
 
 	}
 
-	#nature-tile-img {
-		display: grid;
-		grid-template-rows:[start_row]50%[second]50%[end_row] ;
-		grid-template-columns: [start_col]100%[end_col];
-	}
-
-	#img-1 {
-	
+	#nature-tile-words {
 		grid-row-start: 1;
-		grid-row-end: span second;
+		grid-row-end: span mnr2;
 		grid-column-start: 1;
-		grid-column-end: span end_col;
-	
+		grid-column-end: span mnc2;
+		display: grid;
+		grid-template-columns: [mwc1]100%[mwc2];
+	    grid-template-rows: [mwr1]40% [mwr2]35%[mwr3]auto[mwr4];
 	}
 
-	.slides-1 {
-		border-radius: 0 12px 0 0;
+	#logo-story {
+		grid-row-start: 1;
+		grid-row-end: span mwr2;
+		grid-column-start: 1;
+		grid-column-end: span mwc2;
+		margin-left: 1rem;
 	}
 
-	#img-4 {
+
+	#belief {
 		grid-row-start: 2;
-		grid-row-end: span end_row;
+		grid-row-end: span mwr3;
 		grid-column-start: 1;
-		grid-column-end: span end_col;
-	}
-	#img-3, #img-2 {
-		display: none;
+		grid-column-end: span mwc2;
 	}
 
-	#nature-tile-btn button {
+	#share {
+		grid-row-start: 3;
+		grid-row-end: span mwr4;
+		grid-column-start: 1;
+		grid-column-end: span mwc2;
+	}
+
+	#nature-tile-words h2{
+		font-size: 18px;
+	}
+	#logo-story p, #belief p {
+		font-size: 15px;
+	}
+	#share p {
+		font-size: 12px;
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+
+	#mobile-img {
+		display: grid;
+		grid-template-columns: [mc1]50%[mc2]50%[mc3];
+		grid-template-rows: [mr1]43%[mr2]43%[mr3]auto[mr4];
+		position: relative;
+		transform: translateY(-25%);
+		width: 100%;
+		margin: 0;
+		height: 30rem;
+		padding: 0;
+		overflow: hidden;
+		border-radius: 12px;
+		box-shadow: 0px 10px 6px #888;
+	}
+
+	#m-img-1 {
+		grid-column-start: 1;
+		grid-column-end: span mc2;
+		grid-row-start: 1;
+		grid-row-end:span mr2;
+	}
+
+	#m-img-2 {
+		grid-column-start: 2;
+		grid-column-end: span mc3;
+		grid-row-start: 1;
+		grid-row-end:span mr2;
+	}
+	#m-img-3 {
+		grid-column-start: 1;
+		grid-column-end: span mc3;
+		grid-row-start: 2;
+		grid-row-end:span mr3;
+	}
+	
+	.m-slides-1, .m-slides-2, .m-slides-3{
+		position: absolute;
+		transition: opacity 2s ease-in;
+	}
+
+	#m-btn {
+		grid-column-start: 2;
+		grid-column-end: span mc3;
+		grid-row-start: 3;
+		grid-row-end:span mr4;
+		padding: 1rem;
+	}
+
+	#m-btn button {
 		width: 8rem;
+		margin: 1rem;
+		padding: 1rem;
+		border-radius: 12px;
+		border: none;
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.1);
+		text-align: center;
+		font-family: 'Ubuntu';
+		float: right;
 		margin: 0;
 		padding: 0.5rem;
+		float: right;
+	}
+
+
+	#m-btn button:hover {
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6); 
+		background-color: linear-gradient(-45deg, #C7D6C7, #D2D2C8, #EDD6D6, #EAC9C9);
+		background-size: 300% 300%;
+		animation: gradient 5s ease;
 	}
 }
 </style>
@@ -796,10 +895,9 @@
 			</div>
 			<div id="nature-tile-img">
 				<div id="img-1">
-					
 					<img src="img/r9.jpg" class="slides-1">
 					<img src="img/f23.jpg" class="slides-1">
-					<img src="img/IMG_8267.jpg" class="slides-1">
+					<img src="img/f13.jpg" class="slides-1">
 				</div>
 				<div id="img-2">
 					<img src="img/20.jpg" class="slides-2">
@@ -825,6 +923,30 @@
 			
 
 		</div>	
+	</div>
+
+	<div id="mobile-img">
+		<div id="m-img-1">
+			<img src="img/20.jpg" class="m-slides-1">
+			<img src="img/22.jpg" class="m-slides-1">
+			<img src="img/IMG_6297.jpg" class="m-slides-1">
+		</div>
+		<div id="m-img-2">
+			<img src="img/25.jpg" class="m-slides-2">
+			<img src="img/8.jpg" class="m-slides-2">
+			<img src="img/r12.jpg" class="m-slides-2">
+		</div>
+		<div id="m-img-3">
+			<img src="img/r9.jpg" class="m-slides-3">
+			<img src="img/f23.jpg" class="m-slides-3">
+			<img src="img/IMG_8267.jpg" class="m-slides-3">
+			<img src="img/f26.jpg" class="m-slides-3">
+			<img src="img/2971.jpg" class="m-slides-3">
+			<img src="img/f24.jpg" class="m-slides-3">
+		</div>
+		<div id="m-btn">
+			<button>Full Gallary</button>
+		</div>
 	</div>
 
 </main>
@@ -894,6 +1016,13 @@
 	setupSlide("slides-3", 9500);
 	setupSlideSize("slides-4");
 	setupSlide("slides-4", 10500);
+
+	setupSlideSize("m-slides-1")
+	setupSlide("m-slides-1", 10500);
+	setupSlideSize("m-slides-2")
+	setupSlide("m-slides-2", 9500);
+    setupSlideSize("m-slides-3")
+	setupSlide("m-slides-3", 9000);
 
 	function setupSlide(name, interval){
 		var current = 0;
