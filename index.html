@@ -6,7 +6,7 @@
 	<title></title>
 
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400&family=Lato:wght@100&family=Raleway:wght@100;300;400&family=Ubuntu:wght@100;300;400&display=swap" rel="stylesheet">
-	
+	<script src="https://kit.fontawesome.com/0d7e4138be.js" crossorigin="anonymous"></script>
 <style type="text/css">
 	.green-text {
 		color: #759374;
@@ -80,6 +80,55 @@
 		padding-right: 1rem;
 		text-decoration: none;
 		color: #000;
+		border: none;
+		background: none;
+		font-family: 'Ubuntu', serif;
+		font-size: 20px;
+	}
+	.nav-item-link:hover {
+		color: #888;
+	}
+
+	.dropdown-content {
+		display: none;
+		width: 100%;
+		margin-top: 1rem;
+		left: 0;
+		right: 0;
+		position: absolute;
+		grid-template-rows: [nr1]20%[nr2]auto[nr3];
+		grid-template-columns: [nc1]70%[nc2]30%[nc3];
+		box-shadow: 8px 0 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.dropdown-content div {
+		display: none;
+	}
+
+	#us {
+		height: 13rem;
+		padding: 2rem;
+		grid-row-start: 1;
+		grid-row-end: span nr2;
+		grid-column-start: 1;
+		grid-column-end: span nc2;
+	}
+
+	#contact {
+		height: 13rem;
+		padding: 2rem;
+		grid-row-start: 1;
+		grid-row-end: span nr2;
+		grid-column-start: 2;
+		grid-column-end: span nc3;
+	}
+
+	#drop-blank {
+		height: 50rem;
+		grid-row-start: 2;
+		grid-row-end: span nr3;
+		grid-column-start: 1;
+		grid-column-end: span nc3;
 	}
 
 	#menu-toggle{
@@ -497,13 +546,13 @@
 
 
 	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-	  #nature-tile-img{
+	  #nature-tile-img,#us,#contact{
 	    -webkit-backdrop-filter: blur(10px);
 	    backdrop-filter: blur(10px);
 	    background-color: rgba(255, 255, 255, 0.8);  
 	  }
 
-	   #nature-tile-words, #nature-tile-btn {
+	   #nature-tile-words, #nature-tile-btn,#drop-blank {
 	    -webkit-backdrop-filter: blur(5px);
 	    backdrop-filter: blur(5px);
 	    background-color: rgba(255, 255, 255, 0.4);  
@@ -679,6 +728,50 @@
 		align-items: center;
 		
 
+	}
+
+	.dropdown-content {
+		z-index: 10;
+		height: 50rem;
+		grid-template-rows: [mar1]10rem[mar2]5rem[mar3]auto[mar4];
+		grid-template-columns: [mac1]100%[mac2];
+	}
+
+	#us {
+		z-index: 10;
+		height: 10rem;
+		grid-row-start: 1;
+		grid-row-end: span mar2;
+		grid-column-start: 1;
+		grid-column-end: span mac2;
+		padding-bottom: 0;
+		padding-top: 0;
+		margin-bottom: 0;
+		margin-top: 0;
+	
+	}
+
+	#contact {
+		z-index: 10;
+		height: 5rem;
+		grid-row-start: 2;
+		grid-row-end: span mar3;
+		grid-column-start: 1;
+		grid-column-end: span mac2;
+		padding-bottom: 0;
+		padding-top: 0;
+		margin-bottom: 0;
+		margin-top: 0;
+	
+	}
+
+	#about-blank {
+		grid-row-start: 3;
+		grid-row-end: span mar4;
+		grid-column-start: 1;
+		grid-column-end: span mac2;
+		padding-bottom: 0;
+		padding-top: 0;
 	}
 
 	.main-bg {
@@ -959,6 +1052,8 @@
 		font-size: 12px;
 	}
 }
+
+
 </style>
 <body>
 
@@ -991,7 +1086,15 @@
 				<a href="/awards" class="nav-item-link">Awards</a>
 				</li>
 				<li class="nav-item">
-				<a href="/blog" class="nav-item-link">About</a>
+					<div class="dropdown">
+						<a type="button" href="#" class="nav-item-link" id="about-btn">About <i class="fa-solid fa-angle-down"></i></a>
+						<div class="dropdown-content">
+							<div id="us"><p>test</p></div>
+							<div id="contact"><p>test</p></div>
+							<div id="drop-blank"></div>
+						</div>
+					</div>
+				
 				</li>
 			</ul>
 		</div>
@@ -1201,7 +1304,29 @@
 		$("."+name).css("height",height);
 	}
 	
+	$("#about-btn").click(function(){
+		console.log($(window).width());
+		console.log($(".dropdown-content").css("display"));
+		if($(".dropdown-content").css("display") == "none"){
+			$(this).find('i').removeClass('fa-angle-dwon');
+			$(this).find('i').addClass('fa-angle-up');
+			$(".dropdown-content").css("display","grid");
+			$(".dropdown-content").find("div").css("display","block");
+			$("body").css("height","100%");
+			$("body").css("overflow","hidden");
 
+		}else {
+			$(this).find('i').addClass('fa-angle-dwon');
+			$(this).find('i').removeClass('fa-angle-up');
+			$(".dropdown-content").css("display","none");
+			$(".dropdown-content").find("div").css("display","none");
+			$("#us").css("display","none");
+			$("body").css("height","auto");
+			$("body").css("overflow","auto");
+
+		}
+		
+	})
 	window.addEventListener("resize", respond);
 
 	function respond(){
