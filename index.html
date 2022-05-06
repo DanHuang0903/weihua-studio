@@ -93,16 +93,18 @@
 		font-family: 'Ubuntu';
 		width: 10rem;
 		border: none;
-		margin-right: 7rem;
+		margin-right: 20%;
+		margin-left: 20%;
 		padding: 1rem;
-		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.1);
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
 	    border-radius: 12px;
+	    background-image: linear-gradient(-45deg,#C7D6C7,#D2D2C8, #EDD6D6, #EAC9C9);
 	}
 	#intro-btn:hover {
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6); 
 		background: linear-gradient(-45deg, #C7D6C7, #D2D2C8, #EDD6D6, #EAC9C9);
 		background-size: 300% 300%;
-		animation: gradient 5s ease;
+		animation: gradient 2s ease;
 	}
 
 
@@ -199,8 +201,9 @@
 		font-family: 'Raleway', serif;
 		font-size: 25px;
 		text-align: center;
-		margin-left: 30%;
-		margin-right: 10%;
+		float: right;
+		margin-left: 20%;
+		margin-right: 20%;
 		padding-bottom: 1rem;
 		font-weight: lighter;
 		
@@ -276,7 +279,7 @@
 		border-radius: 12px 0 0 12px;
 		display: grid;
 		grid-template-columns: [c1]100%[c2];
-	    grid-template-rows: [r1]40% [r2]35%[r3]auto[r4];
+	    grid-template-rows: [r1]40% [r2]40%[r3]auto[r4];
 	    overflow: hidden;
 	}
 
@@ -320,6 +323,8 @@
 		grid-row-end: r3;
 		margin-left: 2rem;
 		margin-right: 2rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 		overflow: auto;
 	}
@@ -343,8 +348,8 @@
 		grid-column-end: span c2;	
 		grid-row-start: 3;
 		grid-row-end: r4;
-		margin-left: 2rem;
 		margin-right: 2rem;
+		margin-left: 2rem;
 	}
 
 	#share p {
@@ -356,6 +361,39 @@
 		display: inline-block;
 		text-transform: uppercase;
 	}
+
+	#share-content, #nature-tile-btn-group {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#awarded {
+		background-image: url("img/share_btn_bg_g2.png");
+		background-size: cover;
+
+	}
+	#favorest, #recent {
+		background-image: url("img/share_btn_bg_p2.png");
+		background-size: cover;
+	}
+	.share-btn {
+		margin-right: 3rem;
+		width: 10rem;
+		border-radius: 10px;
+		border: none;
+		box-shadow: 0,0,0,0.2;
+		padding: 0.5rem;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		font-family: 'Ubuntu';
+		font-size: 13px;
+		text-transform: uppercase;
+	}
+
+	.share-btn:hover {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+	}
+
+
 	#nature-tile-img {
 		grid-column-start: 2;
 		grid-column-end: span end;	
@@ -423,37 +461,49 @@
 		grid-row-end: line3;
 		opacity: 1;
 		border-radius: 0 0 12px 0;
-		padding: 1rem;
+		padding-left: 1rem;
+		padding-left: 1rem;
+		background-color: white;
+	}
+
+	#nature-tile-btn p {
+		font-family: 'Ubuntu', serif;
+		font-size: 12px;
+		background-color: white;
+		padding: 4px;
+		border-radius: 6px;
+		display: inline-block;
+		text-transform: uppercase;
 	}
 
 	#nature-tile-btn button{
 		width: 8rem;
-		margin-top: 1rem;
 		padding: 1rem;
 		border-radius: 12px;
 		border: none;
-		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.1);
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
 		text-align: center;
 		font-family: 'Ubuntu';
 		float: right;
+		background-image: linear-gradient(-45deg,#C7D6C7,#D2D2C8, #EDD6D6, #EAC9C9);
 	}
 
 	#nature-tile-btn button:hover {
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6); 
 		background: linear-gradient(-45deg, #C7D6C7, #D2D2C8, #EDD6D6, #EAC9C9);
 		background-size: 300% 300%;
-		animation: gradient 5s ease;
+		animation: gradient 2s ease;
 	}
 
 
 	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-	  #nature-tile-img, #nature-tile-btn{
+	  #nature-tile-img{
 	    -webkit-backdrop-filter: blur(10px);
 	    backdrop-filter: blur(10px);
 	    background-color: rgba(255, 255, 255, 0.8);  
 	  }
 
-	   #nature-tile-words {
+	   #nature-tile-words, #nature-tile-btn {
 	    -webkit-backdrop-filter: blur(5px);
 	    backdrop-filter: blur(5px);
 	    background-color: rgba(255, 255, 255, 0.4);  
@@ -482,6 +532,7 @@
 	.footer-group h2 {
 		font-family: 'Ubuntu', serif;
 		font-size: 20px;
+		text-align: center;
 	}
 	.footer-group img {
 		height: 20px;
@@ -751,6 +802,42 @@
 		background-color: rgba(0, 0, 0, 0.1);
 	}
 
+	#share-content {
+		width: 100%;
+		display: grid;
+		grid-template-columns: [sc1]33%[sc2]33%[sc3]33%[sc4];
+		grid-template-rows: [sr1]100%[sr2];
+
+		
+	}
+
+
+	.share-btn {
+		width: 7rem;
+		font-size: 12px;
+	}
+	#awarded {
+		
+		grid-row-start:1 ;
+		grid-row-end: span sr2;
+		grid-column-start: 1;
+		grid-column-end: span sc2;
+	}
+
+	#favorest {
+		
+		grid-row-start: 1;
+		grid-row-end: span sr2;
+		grid-column-start: 2;
+		grid-column-end: span sc3;
+	}
+	#recent {
+
+		grid-row-start: 1;
+		grid-row-end: sr2;
+		grid-column-start: 3;
+		grid-column-end: sc4;
+	}
 
 	#mobile-img {
 		display: grid;
@@ -814,6 +901,7 @@
 		padding: 0.5rem;
 		float: right;
 		color: black;
+		background-image: linear-gradient(-45deg,#C7D6C7,#D2D2C8, #EDD6D6, #EAC9C9);
 	}
 
 
@@ -822,6 +910,45 @@
 		background-color: linear-gradient(-45deg, #C7D6C7, #D2D2C8, #EDD6D6, #EAC9C9);
 		background-size: 300% 300%;
 		animation: gradient 5s ease;
+	}
+
+	.footer-content {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		height: 10rem;
+		width: 100%;
+		margin-top: 0;
+		padding: 0;
+		transform: translateY(-10%);
+		
+	}
+
+	.footer-group h2 {
+		font-size: 15px;
+		text-align: center;
+	}
+
+	.footer-group li {
+		font-size: 12px;
+		text-align: left;
+	}
+
+	.footer-group {
+		padding-top: 0;
+		text-align: center;
+	}
+
+	#rights {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	#rights p {
+		padding: 0;
+		margin: 0;
+		font-size: 12px;
 	}
 }
 </style>
@@ -856,7 +983,7 @@
 				<a href="/awards" class="nav-item-link">Awards</a>
 				</li>
 				<li class="nav-item">
-				<a href="/blog" class="nav-item-link">Blog</a>
+				<a href="/blog" class="nav-item-link">About</a>
 				</li>
 			</ul>
 		</div>
@@ -873,7 +1000,7 @@
 				Photographic works by Weihua Huang, reveal the pretty of earth, display diverse cultures of human society. 
 			</p>
 
-			<button id="intro-btn">What is D-studio</button>
+			<button id="intro-btn">WHAT IS D-STUDIO</button>
 		</div>
 		<div id="d-studio" class="modal">
 			<div class="d-studio-content">
@@ -909,6 +1036,11 @@
 				</div>
 				<div id="share">
 					<p>shortcut</p>
+					<div id="share-content">
+						<button id="awarded" class="share-btn">Awarded<br/> Photography</button>
+						<button id="favorest" class="share-btn">Photographer<br/> Favorest</button>
+						<button id="recent" class="share-btn">Most<br>Recent</button>
+					</div>
 				</div>
 			</div>
 			<div id="nature-tile-img">
@@ -936,7 +1068,11 @@
 				</div>
 			</div>
 			<div id="nature-tile-btn">
-				<button >Full Gallary</button>
+				<p>for everyone</p>
+				<div id="nature-tile-btn-group">
+					<button >FULL GALLARY</button>
+				</div>
+				
 			</div>
 			
 
@@ -963,7 +1099,7 @@
 			<img src="img/f24.jpg" class="m-slides-3">
 		</div>
 		<div id="m-btn">
-			<button>Full Gallary</button>
+			<button>FULL GALLARY</button>
 		</div>
 	</div>
 
@@ -980,10 +1116,6 @@
 		</div>
 		<div class="footer-group">
 			<h2>Association</h2>
-			<ul></ul>
-		</div>
-		<div class="footer-group">
-			<h2>Contact</h2>
 			<ul></ul>
 		</div>
 		<div class="footer-group">
