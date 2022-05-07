@@ -8,6 +8,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400&family=Lato:wght@100&family=Raleway:wght@100;300;400&family=Ubuntu:wght@100;300;400&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0d7e4138be.js" crossorigin="anonymous"></script>
 <style type="text/css">
+	body{
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
 	.green-text {
 		color: #759374;
 	}
@@ -1256,6 +1260,8 @@
 		}else {
 			$('.main-header').addClass('not-active');
 			$('.main-header').removeClass('is-active');
+			$("body").css("height","auto");
+			$("body").css("overflow-y","auto");
 		}
 
 
@@ -1314,7 +1320,7 @@
 			$(".dropdown-content").css("display","grid");
 			$(".dropdown-content").find("div").css("display","block");
 			$("body").css("height","100%");
-			$("body").css("overflow","hidden");
+			$("body").css("overflow-y","hidden");
 
 		}else {
 			$(this).find('i').addClass('fa-angle-dwon');
@@ -1323,7 +1329,7 @@
 			$(".dropdown-content").find("div").css("display","none");
 			$("#us").css("display","none");
 			$("body").css("height","auto");
-			$("body").css("overflow","auto");
+			$("body").css("overflow-y","auto");
 
 		}
 		
