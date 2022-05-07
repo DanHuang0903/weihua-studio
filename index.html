@@ -632,6 +632,52 @@
 	.nature-content h2 {
 		font-size: 60px;
 	}
+	a, button {
+		text-decoration: none;
+		color: black;
+	}
+
+	#share-content {
+		width: 100%;
+		display: grid;
+		grid-template-columns: [sc1]33%[sc2]33%[sc3]33%[sc4];
+		grid-template-rows: [sr1]100%[sr2];
+
+		
+	}
+
+
+	.share-btn {
+		width: 7.3rem;
+		font-size: 12px;
+		text-decoration: none;
+		color: black;
+	}
+
+	#awarded {
+		
+		grid-row-start:1 ;
+		grid-row-end: span sr2;
+		grid-column-start: 1;
+		grid-column-end: span sc2;
+		border-radius: 10px 0 0 10px;
+	}
+
+	#fav {
+		grid-row-start: 1;
+		grid-row-end: span sr2;
+		grid-column-start: 2;
+		grid-column-end: span sc3;
+		border-radius: 10px 0 0 10px;
+	}
+	
+	#recent {
+
+		grid-row-start: 1;
+		grid-row-end: sr2;
+		grid-column-start: 3;
+		grid-column-end: sc4;
+	}
 
 }
 @media screen and (max-width: 560px) {
