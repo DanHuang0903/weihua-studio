@@ -26,8 +26,30 @@
 		z-index: 10;
 	}
 
+	.ribbon-wrapper {
+		font-family: 'Raleway', serif;
+		font-size: 15px;
+		text-align: center;
+		height: 3rem;
+	}
+
+	.ribbon-content
+	 {
+	 	width: 100%;
+	 	background-color: white;
+		text-align: center;
+		position: absolute;
+		transition: opacity 1s ease-in;
+	}
+
+	.ribbon-content p {
+		text-align: center;
+	}
+
 	.menu-bar {
 		display: flex;
+		padding-top: 1rem;
+		border-top: solid 1px rgba(0, 0, 0, 0.1);
 	}
 	.nav-container {
 		display: flex;
@@ -623,7 +645,7 @@
 
 	footer li {
 		font-family: 'Raleway',serif;
-		font-size: 17px;
+		font-size: 15px;
 		margin-bottom: 10px;
 		color: #888;
 	}
@@ -1208,7 +1230,18 @@
 
 <header class="main-header not-active">
 	<a class="ribbon">
-		<div class="ribbon-wrapper"></div>
+		<div class="ribbon-wrapper">
+			<div class="ribbon-content">
+				<p id="new-count" ><span id="recent-num"></span> Recently Released Photograpic Works</p>
+			</div>
+			<div class="ribbon-content">
+				<p id="award-count"><span id="award-num"></span> Awards Gained </p>
+			</div>
+			<div class="ribbon-content">
+				<p id="city-count"><span id="city-num"></span> Cities Visited</p>
+			</div>
+		</div>
+
 	</a>
 	<nav class="menu-bar">
 		<div class="nav-container">
@@ -1437,6 +1470,8 @@
 	setupSlide("m-slides-2", 9500);
     setupSlideSize("m-slides-3")
 	setupSlide("m-slides-3", 9000);
+
+	setupSlide("ribbon-content",5000)
 
 	function setupSlide(name, interval){
 		var current = 0;
