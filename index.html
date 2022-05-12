@@ -645,7 +645,7 @@
 
 	footer li {
 		font-family: 'Raleway',serif;
-		font-size: 15px;
+		font-size: 13px;
 		margin-bottom: 10px;
 		color: #888;
 	}
@@ -663,20 +663,34 @@
 		text-align: center;
 	}
 
-	@media screen and (max-width: 1190px){
-		.main-bg::before {
-			transform: translateY(-52%);
-		}
-		.nature {
-			transform: translateY(20%);
-
-		}
-		.footer-content{
-			margin-top: 20%;
-		}
+@media screen and (max-width: 1190px){
+	.ribbon-wrapper {
+	border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 	}
+	.home-main-content{
+		margin-top: 0;
+		transform: translateY(-30%);
+	}
+	.main-bg::before {
+		transform: translateY(-52%);
+	}
+	.nature {
+		transform: translateY(20%);
+
+	}
+	.footer-content{
+		margin-top: 20%;
+	}
+}
 	
-	@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1040px) {
+	.ribbon-wrapper {
+	border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+	}
+	.home-main-content{
+		margin-top: 0;
+		transform: translateY(-30%);
+	}
 	.main-bg::before {
 		transform: translateY(-58%);
 	}
@@ -695,7 +709,7 @@
 	}
 	.nature-content h2 {
 
-		font-size: 60px;
+		font-size: 40px;
 	}
 	a, button {
 		text-decoration: none;
@@ -751,14 +765,33 @@
 
 }
 
-@media screen and (max-width: 850px) {
-		.main-bg::before {
-			transform: translateY(-62%);
-		}
+@media screen and (max-width: 900px) {
+	.ribbon-wrapper {
+	border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+	}
+	.home-main-content{
+		margin-top: 0;
+		transform: translateY(-30%);
+	}
+	.main-bg::before {
+		transform: translateY(-62%);
+	}
+	.home-main-content h1 {
+		font-size: 60px;
+	}
+	.home-main-content p {
+		font-size: 20px;
+	}
+	.nature-content h2 {
+		font-size: 30px;
+	}
+	.nature-content p {
+		font-size: 20px;
+	}
+	.footer-content {
+		padding-top: 10%;
+	}
 
-		.footer-content {
-			padding-top: 10%;
-		}
 	}
 
 @media screen and (max-width: 560px) {
@@ -770,8 +803,13 @@
 		height: 100%;
 		margin-left: 5rem;
 	}
+
+	.ribbon-wrapper {
+		border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+	}
 	.menu-bar {
 		display: block;
+		
 	}
 	.nav-container {
 		margin-left: 0;
@@ -846,23 +884,23 @@
 	.main-header.is-active .nav-item {
 		display: flex;
 		flex-direction: column;
-		padding: 0;
 		width: 100%;
 
 	}
 	.menu .nav-item-link {
-		border-top: solid 1px rgba(0, 0, 0, 0.2);
+		border-top: solid 1px rgba(0, 0, 0, 0.1);
 		height: 3rem;
-		
+		padding-top: 1rem;
+		padding-bottom: 0rem;
+		margin: 0;
 		width: 100%;
-		justify-content: space-between;
-		align-items: center;
-		
 
 	}
 
 	.dropdown {
-		border-top: solid 1px rgba(0, 0, 0, 0.2);
+		border-top: solid 1px rgba(0, 0, 0, 0.1);
+		padding-top: 1rem;
+		padding-bottom: 0rem;
 	}
 	#about-btn {
 		border-top: none;
@@ -1130,6 +1168,8 @@
 		grid-column-end: span mc2;
 		grid-row-start: 1;
 		grid-row-end:span mr2;
+		border-bottom: solid 4px white;
+		border-right: solid 4px white;
 	}
 
 	#m-img-2 {
@@ -1137,6 +1177,7 @@
 		grid-column-end: span mc3;
 		grid-row-start: 1;
 		grid-row-end:span mr2;
+		border-bottom: solid 4px white;
 	}
 	#m-img-3 {
 		grid-column-start: 1;
@@ -1202,7 +1243,7 @@
 	}
 
 	.footer-group li {
-		font-size: 12px;
+		font-size: 11px;
 		text-align: left;
 	}
 
@@ -1409,7 +1450,17 @@
 		</div>
 		<div class="footer-group">
 			<h2>Association</h2>
-			<ul></ul>
+			<ul>
+				<li>
+					<a href="https://psa-photo.org/" target="_blank">Photographic Society of America</a>
+				</li>
+				<li>
+					<a href="https://www.gpuphoto.com/" target="_blank">Global Photographic Union</a>
+				</li>
+				<li>
+					<a href="https://rps.org/" target="_blank">The Royal Photographic Society</a>
+				</li>
+			</ul>
 		</div>
 		<div class="footer-group">
 			<h2>Support</h2>
@@ -1420,7 +1471,7 @@
 		</div>
 	</div>
 	<div id="rights">
-		<p>© 2022 Dan Huang</p>
+		<p>&copy; 2022 Dan Huang</p>
 		<p>D-Studio Website Designed & Developed by Dan Huang</p>
 		<p>Photos by Weihua Huang</p>
 	</div>
