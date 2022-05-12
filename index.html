@@ -568,7 +568,10 @@
 		text-transform: uppercase;
 	}
 
-	#nature-tile-btn button{
+	#nature-tile-btn a{
+		text-decoration: none;
+		color: black;
+		font-size: 12px;
 		width: 9rem;
 		padding: 1rem;
 		border-radius: 10px;
@@ -580,7 +583,7 @@
 		background-image: linear-gradient(-45deg,#C7D6C7,#D2D2C8, #EDD6D6, #EAC9C9);
 	}
 
-	#nature-tile-btn button:hover {
+	#nature-tile-btn a:hover {
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6); 
 		background: linear-gradient(-45deg, #C7D6C7, #D2D2C8, #EDD6D6, #EAC9C9);
 		background-size: 300% 300%;
@@ -1018,9 +1021,17 @@
 	#title-1{
 		animation: appear 1.5s linear;
 	}
+
+	#title-1 span{
+		text-shadow: none;
+	}
 	#title-2{
 
 		animation: appear-2 3s linear;
+	}
+
+	#title-2 span{
+		text-shadow: none;
 	}
 
 	@keyframes appear-2 {
@@ -1329,7 +1340,7 @@
 		<div class="main-bg">
 		</div>
 		<div class="home-main-content">
-			<h1>Weihua Photography D-studio</h1>
+			<h1>Weihua Photographic D-studio</h1>
 			<p id="home-main-p">
 				Photographic works by Weihua Huang, reveal the pretty of earth, display diverse cultures of human society. 
 			</p>
@@ -1349,10 +1360,10 @@
 		
 		<div class="nature-content">
 			<h2 id="title-1">
-				Moutain, River, Woods, <span class="green-text word-shadow">Nature </span>
+				Moutain, River, Woods, <span class="green-text">Nature </span>
 			</h2>
 			<h2 id="title-2">
-				People, Society, Living, <span class="pink-text word-shadow">Culture</span>
+				People, Society, Living, <span class="pink-text">Culture</span>
 			</h2>
 			<p>
 				life is a journey, photos capture the moments
@@ -1404,7 +1415,7 @@
 			<div id="nature-tile-btn">
 				<p>for everyone</p>
 				<div id="nature-tile-btn-group">
-					<button >FULL GALLARY</button>
+					<a href="gallery" target="_blank">FULL GALLERY</a>
 				</div>
 				
 			</div>
@@ -1433,7 +1444,7 @@
 			<img src="img/f24.jpg" class="m-slides-3">
 		</div>
 		<div id="m-btn">
-			<button>FULL GALLARY</button>
+			<button>FULL GALLERY</button>
 		</div>
 	</div>
 
